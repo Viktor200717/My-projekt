@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мій сайт</title>
+    <style>
+        /* CSS стилі */
+        body {
+            background-color: #000;
+            color: #fff;
+        }
+
+        header {
+            background-color: #333;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 10px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        main {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#" id="home">Головна</a></li>
+                <li><a href="#" id="mysites">Мої сайти</a></li>
+                <li><a href="#" id="contact">Як зі мною зв'язатися</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div id="content">
+            <!-- Сюди буде завантажуватися контент з JavaScript -->
+        </div>
+    </main>
+    <script>
+        // JavaScript код
+        const homeButton = document.getElementById("home");
+        const mySitesButton = document.getElementById("mysites");
+        const contactButton = document.getElementById("contact");
+        const content = document.getElementById("content");
+
+        function loadContent(buttonId) {
+            content.innerHTML = "";
+            if (buttonId === "home") {
+                content.innerHTML = "<h1>Ласкаво просимо на головну сторінку!</h1>";
+            } else if (buttonId === "mysites") {
+                content.innerHTML = "<h1>Мої сайти:</h1><ul><li>Сайт 1</li><li>Сайт 2</li></ul>";
+            } else if (buttonId === "contact") {
+                content.innerHTML = "<h1>Зв'язок зі мною:</h1><p>Тут ви можете знайти інформацію для зв'язку зі мною.</p>";
+            }
+        }
+
+        homeButton.addEventListener("click", function() {
+            loadContent("home");
+        });
+
+        mySitesButton.addEventListener("click", function() {
+            loadContent("mysites");
+        });
+
+        contactButton.addEventListener("click", function() {
+            loadContent("contact");
+        });
+
+        loadContent("home");
+    </script>
+</body>
+</html>
